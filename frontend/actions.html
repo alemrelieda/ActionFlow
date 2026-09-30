@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ActionFlow - Actions</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div>
+
+                <h2 class="sidebar-logo">
+                    ActionFlow
+                </h2>
+
+                <nav class="sidebar-nav">
+
+                    <a href="dashboard.html" class="nav-link">
+                        Dashboard
+                    </a>
+
+                    <a href="meetings.html" class="nav-link">
+                        Meetings
+                    </a>
+
+                    <a href="decisions.html" class="nav-link">
+                        Decisions
+                    </a>
+
+                    <a href="actions.html" class="nav-link active">
+                        Actions
+                    </a>
+
+                    <a href="kanban.html" class="nav-link">
+                        Kanban
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        FOLLOW-UP
+                    </span>
+
+                    <h1>
+                        Actions
+                    </h1>
+
+                    <p>
+                        Track responsibilities, deadlines and progress.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <section class="page-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ACTION ITEMS
+                        </span>
+
+                        <h2>
+                            All Actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="action-filters">
+
+                    <div class="form-field">
+
+                        <label for="actionSearchFilter">
+                            Search
+                        </label>
+
+                        <input
+                            type="text"
+                            id="actionSearchFilter"
+                            placeholder="Search action..."
+                        >
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="actionStatusFilter">
+                            Status
+                        </label>
+
+                        <select id="actionStatusFilter">
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+                            <option value="To Do">
+                                To Do
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Blocked">
+                                Blocked
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                            <option value="Cancelled">
+                                Cancelled
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="actionPriorityFilter">
+                            Priority
+                        </label>
+
+                        <select id="actionPriorityFilter">
+
+                            <option value="">
+                                All Priorities
+                            </option>
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Critical">
+                                Critical
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="actionResponsibleFilter">
+                            Responsible Person
+                        </label>
+
+                        <select id="actionResponsibleFilter">
+
+                            <option value="">
+                                All People
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="action-filter-bottom">
+
+                        <label class="action-overdue-filter">
+
+                            <input
+                                type="checkbox"
+                                id="actionOverdueFilter"
+                            >
+
+                            <span>
+                                Overdue only
+                            </span>
+
+                        </label>
+
+                        <button
+                            type="button"
+                            id="clearActionFiltersButton"
+                            class="secondary-button"
+                        >
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="actionsPageMessage"
+                    class="meeting-detail-message"
+                >
+                    Loading actions...
+                </div>
+
+                <div
+                    id="actionsList"
+                    class="meeting-detail-list"
+                >
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+      <script src="app.js"></script>
+<script src="actions-details-v2.js"></script>
+<script src="actions-delete.js"></script>
+<script src="actions-permissions.js"></script>
+
+</body>
+</html>

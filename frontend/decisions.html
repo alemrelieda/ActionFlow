@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ActionFlow - Decisions</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div>
+
+                <h2 class="sidebar-logo">
+                    ActionFlow
+                </h2>
+
+                <nav class="sidebar-nav">
+
+                    <a href="dashboard.html" class="nav-link">
+                        Dashboard
+                    </a>
+
+                    <a href="meetings.html" class="nav-link">
+                        Meetings
+                    </a>
+
+                    <a href="decisions.html" class="nav-link active">
+                        Decisions
+                    </a>
+
+                    <a href="actions.html" class="nav-link">
+                        Actions
+                    </a>
+
+                    <a href="kanban.html" class="nav-link">
+                        Kanban
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        MEETING OUTPUT
+                    </span>
+
+                    <h1>
+                        Decisions
+                    </h1>
+
+                    <p>
+                        Track decisions made in meetings and follow their implementation.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <section class="page-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            DECISION TRACKING
+                        </span>
+
+                        <h2>
+                            All Decisions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="action-filters">
+
+                    <div class="form-field">
+
+                        <label for="decisionSearchFilter">
+                            Search
+                        </label>
+
+                        <input
+                            type="text"
+                            id="decisionSearchFilter"
+                            placeholder="Search decision..."
+                        >
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="decisionStatusFilter">
+                            Implementation Status
+                        </label>
+
+                        <select id="decisionStatusFilter">
+
+                            <option value="">
+                                All Statuses
+                            </option>
+
+                            <option value="Not Started">
+                                Not Started
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Partially Implemented">
+                                Partially Implemented
+                            </option>
+
+                            <option value="Implemented">
+                                Implemented
+                            </option>
+
+                            <option value="Not Implemented">
+                                Not Implemented
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="decisionMeetingFilter">
+                            Meeting
+                        </label>
+
+                        <select id="decisionMeetingFilter">
+
+                            <option value="">
+                                All Meetings
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-field">
+
+                        <label for="decisionActionFilter">
+                            Action Status
+                        </label>
+
+                        <select id="decisionActionFilter">
+
+                            <option value="">
+                                All Decisions
+                            </option>
+
+                            <option value="with-actions">
+                                With Actions
+                            </option>
+
+                            <option value="without-actions">
+                                Without Actions
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="action-filter-bottom">
+
+                        <div></div>
+
+                        <button
+                            type="button"
+                            id="clearDecisionFiltersButton"
+                            class="secondary-button"
+                        >
+                            Clear Filters
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="decisionsPageMessage"
+                    class="meeting-detail-message"
+                >
+                    Loading decisions...
+                </div>
+
+                <div
+                    id="decisionsList"
+                    class="meeting-detail-list"
+                >
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="decisions-permissions.js"></script>
+
+</body>
+</html>

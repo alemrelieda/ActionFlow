@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ActionFlow - Meeting Detail</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div>
+
+                <h2 class="sidebar-logo">
+                    ActionFlow
+                </h2>
+
+                <nav class="sidebar-nav">
+
+                    <a
+                        href="dashboard.html"
+                        class="nav-link"
+                    >
+                        Dashboard
+                    </a>
+
+                    <a
+                        href="meetings.html"
+                        class="nav-link active"
+                    >
+                        Meetings
+                    </a>
+
+                    <a
+                        href="decisions.html"
+                        class="nav-link"
+                    >
+                        Decisions
+                    </a>
+
+                    <a
+                        href="actions.html"
+                        class="nav-link"
+                    >
+                        Actions
+                    </a>
+
+                    <a
+                        href="kanban.html"
+                        class="nav-link"
+                    >
+                        Kanban
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <div class="meeting-detail-top">
+
+                <a
+                    href="meetings.html"
+                    class="back-link"
+                >
+                    ← Back to Meetings
+                </a>
+
+            </div>
+
+            <div
+                id="meetingDetailMessage"
+                class="meeting-detail-message"
+            >
+                Loading meeting...
+            </div>
+
+            <div
+                id="meetingDetailContent"
+                class="hidden"
+            >
+
+                <section class="meeting-detail-hero">
+
+                    <div class="meeting-detail-hero-main">
+
+                        <span class="page-eyebrow">
+                            MEETING
+                        </span>
+
+                        <h1 id="meetingDetailTitle">
+                            Meeting
+                        </h1>
+
+                        <p id="meetingDetailDescription">
+                        </p>
+
+                    </div>
+
+                    <div class="meeting-detail-date">
+
+                        <span
+                            id="meetingDetailMonth"
+                            class="meeting-detail-month"
+                        >
+                            -
+                        </span>
+
+                        <strong
+                            id="meetingDetailDay"
+                            class="meeting-detail-day"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+                </section>
+
+                <section class="meeting-info-grid">
+
+                    <div class="meeting-info-box">
+
+                        <span class="meeting-info-label">
+                            Date & Time
+                        </span>
+
+                        <strong id="meetingDetailDateTime">
+                            -
+                        </strong>
+
+                    </div>
+
+                    <div class="meeting-info-box">
+
+                        <span class="meeting-info-label">
+                            Location
+                        </span>
+
+                        <strong id="meetingDetailLocation">
+                            -
+                        </strong>
+
+                    </div>
+
+                    <div class="meeting-info-box">
+
+                        <span class="meeting-info-label">
+                            Participants
+                        </span>
+
+                        <strong id="meetingDetailParticipantCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="meeting-info-box">
+
+                        <span class="meeting-info-label">
+                            Decisions
+                        </span>
+
+                        <strong id="meetingDetailDecisionCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </section>
+
+                <div class="meeting-detail-grid">
+
+                    <div class="meeting-detail-column">
+
+                        <section class="page-section">
+
+                            <div class="section-heading">
+
+                                <div>
+
+                                    <span class="section-eyebrow">
+                                        MEETING OUTPUT
+                                    </span>
+
+                                    <h2>
+                                        Decisions
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    id="addDecisionButton"
+                                    type="button"
+                                    class="page-primary-button"
+                                >
+                                    + Add Decision
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="meetingDecisionsList"
+                                class="meeting-detail-list"
+                            >
+
+                                <p class="empty-message">
+                                    Decisions will appear here.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <div class="meeting-detail-column">
+
+                        <section class="page-section">
+
+                            <div class="section-heading">
+
+                                <div>
+
+                                    <span class="section-eyebrow">
+                                        PEOPLE
+                                    </span>
+
+                                    <h2>
+                                        Participants
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    id="addParticipantButton"
+                                    type="button"
+                                    class="small-action-button primary"
+                                >
+                                    + Add
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="meetingParticipantsList"
+                                class="meeting-detail-list"
+                            >
+
+                                <p class="empty-message">
+                                    Participants will appear here.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                        <section class="page-section">
+
+                            <div class="section-heading">
+
+                                <div>
+
+                                    <span class="section-eyebrow">
+                                        NOTES
+                                    </span>
+
+                                    <h2>
+                                        Meeting Notes
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+                            <div class="meeting-notes-box">
+
+                                <p id="meetingDetailNotes">
+                                    No notes added.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                        <section class="page-section">
+
+                            <div class="section-heading">
+
+                                <div>
+
+                                    <span class="section-eyebrow">
+                                        DETAILS
+                                    </span>
+
+                                    <h2>
+                                        Meeting Information
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+                            <div class="meeting-created-info">
+
+                                <div>
+
+                                    <span>
+                                        Created by
+                                    </span>
+
+                                    <strong id="meetingDetailCreatedBy">
+                                        -
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Created
+                                    </span>
+
+                                    <strong id="meetingDetailCreatedAt">
+                                        -
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="meeting-permissions.js"></script>
+
+</body>
+</html>

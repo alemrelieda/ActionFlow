@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ActionFlow - Kanban</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div>
+
+                <h2 class="sidebar-logo">
+                    ActionFlow
+                </h2>
+
+                <nav class="sidebar-nav">
+
+                    <a href="dashboard.html" class="nav-link">
+                        Dashboard
+                    </a>
+
+                    <a href="meetings.html" class="nav-link">
+                        Meetings
+                    </a>
+
+                    <a href="decisions.html" class="nav-link">
+                        Decisions
+                    </a>
+
+                    <a href="actions.html" class="nav-link">
+                        Actions
+                    </a>
+
+                    <a href="kanban.html" class="nav-link active">
+                        Kanban
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        ACTION BOARD
+                    </span>
+
+                    <h1>
+                        Kanban
+                    </h1>
+
+                    <p>
+                        Follow action items by their current status.
+                    </p>
+
+                </div>
+
+            </header>
+
+            <div
+                id="kanbanMessage"
+                class="meeting-detail-message"
+            >
+                Loading board...
+            </div>
+
+            <section class="kanban-board">
+
+                <div class="kanban-column">
+
+                    <div class="kanban-column-header">
+
+                        <h2>
+                            To Do
+                        </h2>
+
+                        <span id="kanbanTodoCount">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="kanbanTodoList"
+                        class="kanban-list"
+                    ></div>
+
+                </div>
+
+                <div class="kanban-column">
+
+                    <div class="kanban-column-header">
+
+                        <h2>
+                            In Progress
+                        </h2>
+
+                        <span id="kanbanProgressCount">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="kanbanProgressList"
+                        class="kanban-list"
+                    ></div>
+
+                </div>
+
+                <div class="kanban-column">
+
+                    <div class="kanban-column-header">
+
+                        <h2>
+                            Blocked
+                        </h2>
+
+                        <span id="kanbanBlockedCount">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="kanbanBlockedList"
+                        class="kanban-list"
+                    ></div>
+
+                </div>
+
+                <div class="kanban-column">
+
+                    <div class="kanban-column-header">
+
+                        <h2>
+                            Completed
+                        </h2>
+
+                        <span id="kanbanCompletedCount">
+                            0
+                        </span>
+
+                    </div>
+
+                    <div
+                        id="kanbanCompletedList"
+                        class="kanban-list"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+<script src="kanban-controls.js"></script>
+
+</body>
+</html>

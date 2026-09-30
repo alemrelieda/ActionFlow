@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ActionFlow - Meetings</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div>
+
+                <h2 class="sidebar-logo">
+                    ActionFlow
+                </h2>
+
+                <nav class="sidebar-nav">
+
+                    <a
+                        href="dashboard.html"
+                        class="nav-link"
+                    >
+                        Dashboard
+                    </a>
+
+                    <a
+                        href="meetings.html"
+                        class="nav-link active"
+                    >
+                        Meetings
+                    </a>
+
+                    <a
+                        href="decisions.html"
+                        class="nav-link"
+                    >
+                        Decisions
+                    </a>
+
+                    <a
+                        href="actions.html"
+                        class="nav-link"
+                    >
+                        Actions
+                    </a>
+
+                    <a
+                        href="kanban.html"
+                        class="nav-link"
+                    >
+                        Kanban
+                    </a>
+
+                </nav>
+
+            </div>
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                Logout
+            </button>
+
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="page-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        MEETING MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Meetings
+                    </h1>
+
+                    <p>
+                        Create meetings and track the decisions
+                        that come out of them.
+                    </p>
+
+                </div>
+
+                <button
+                    id="openMeetingFormButton"
+                    class="page-primary-button"
+                    type="button"
+                >
+                    + New Meeting
+                </button>
+
+            </header>
+
+            <section
+                id="meetingFormSection"
+                class="meeting-form-card hidden"
+            >
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            NEW MEETING
+                        </span>
+
+                        <h2>
+                            Create Meeting
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="closeMeetingFormButton"
+                        type="button"
+                        class="icon-button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <form id="meetingForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-field full-width">
+
+                            <label for="meetingTitle">
+                                Meeting Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="meetingTitle"
+                                placeholder="Example: Weekly Product Meeting"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="meetingDate">
+                                Date & Time
+                            </label>
+
+                            <input
+                                type="datetime-local"
+                                id="meetingDate"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-field">
+
+                            <label for="meetingLocation">
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                id="meetingLocation"
+                                placeholder="Meeting Room A"
+                            >
+
+                        </div>
+
+                        <div class="form-field full-width">
+
+                            <label for="meetingDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="meetingDescription"
+                                rows="3"
+                                placeholder="What is this meeting about?"
+                            ></textarea>
+
+                        </div>
+
+                        <div class="form-field full-width">
+
+                            <label for="meetingNotes">
+                                Notes
+                            </label>
+
+                            <textarea
+                                id="meetingNotes"
+                                rows="3"
+                                placeholder="Optional notes"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            id="cancelMeetingButton"
+                            class="secondary-button"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="page-primary-button"
+                        >
+                            Create Meeting
+                        </button>
+
+                    </div>
+
+                    <p
+                        id="meetingMessage"
+                        class="form-message"
+                    ></p>
+
+                </form>
+
+            </section>
+
+            <section class="page-section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            ALL MEETINGS
+                        </span>
+
+                        <h2>
+                            Meeting List
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="meetingsList"
+                    class="meetings-page-list"
+                >
+
+                    <p class="empty-message">
+                        Loading meetings...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
